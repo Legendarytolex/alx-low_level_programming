@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * Main - Entry point of the program
+ * main - Entry point of the program
  *
  * this program checks for the last digit of n
  * and check if it is greater than 5, equals 0 or less than 6
@@ -22,6 +22,6 @@ int main(void)
 	else if ((n % 10) == 0)
 		printf("Last digit of %d is %d and is 0\n", n, n % 10);
 	else
-		printf("Last digit of %d id %d and is less than 6 and not 0\n", n, n % 10);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
 	return (0);
 }
