@@ -1,50 +1,38 @@
 #include <stdio.h>
 /**
  * main - entry point
- * a program that prints all possible combinations of two two-digit numbers.
- * Return: always 0 (success)
+ *  a program that prints all possible combinations of two two-digit numbers.
+ *  Return: always 0 (success)
  */
+
 int main(void)
 {
-	int tens1 = 0;
-	int ones1 = 0;
+	int i = 0;
+	int j = 0;
 
-	while (tens1 <= 9)
+	while (i <= 98)
 	{
-		int tens2 = 0;
-		int ones2 = 1;
+		j = 1;
 
-		while (tens2 <= 9)
+		while (j <= 99)
 		{
-			while (ones2 <= 9)
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
+
+			if (i != 99 || j != 99)
 			{
-				if (tens1 == 0 && ones1 == 0)
-				{
-					ones2++;
-					continue;
-				}
-				putchar('0' + tens1);
-				putchar('0' + ones1);
+				putchar(',');
 				putchar(' ');
-				putchar('0' + tens2);
-				putchar('0' + ones2);
-				if (tens1 != 9 || ones1 != 9 || tens2 != 9 || ones2 != 9)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-				ones2++;
 			}
-				ones2 = 0;
-				tens2++;
+			j++;
 		}
-		ones1++;
-		if (ones1 > 9)
-		{
-			ones1 = 0;
-			tens1++;
-		}
+		i++;
 	}
+
 	putchar('\n');
+
 	return (0);
 }
