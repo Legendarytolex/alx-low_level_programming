@@ -10,14 +10,14 @@ int main(void)
 	int tens1 = 0;
 	int ones1 = 0;
 
-	while (tens1 < 9)
+	while (tens1 <= 9)
 	{
 		int tens2 = 0;
 		int ones2 = 1;
 
-		while (tens2 < 9)
+		while (tens2 <= 9)
 		{
-			while (ones2 < 9)
+			while (ones2 <= 9)
 			{
 				putchar('0' + tens1);
 				putchar('0' + ones1);
