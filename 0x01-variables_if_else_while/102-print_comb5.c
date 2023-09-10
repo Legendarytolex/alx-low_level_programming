@@ -28,7 +28,7 @@ int main(void)
 				putchar(' ');
 				putchar('0' + tens2);
 				putchar('0' + ones2);
-				if (tens1 < 9 || ones1 < 9 || tens2 < 9 || ones2 < 9)
+				if (tens1 != 9 || ones1 != 9 || tens2 != 9 || ones2 != 9)
 				{
 					putchar(',');
 					putchar(' ');
