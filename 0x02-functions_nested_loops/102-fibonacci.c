@@ -13,7 +13,7 @@ int main(void)
 	long int next;
 	int count = 0;
 
-	printf("ld, %ld", fib1, fib2);
+	printf("%ld, %ld", fib1, fib2);
 	count = 2;
 
 	while (count < n)
