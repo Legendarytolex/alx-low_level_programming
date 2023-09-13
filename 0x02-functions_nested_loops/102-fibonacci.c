@@ -8,18 +8,18 @@
 int main(void)
 {
 	int n = 50;
-	long long int fib1 = 1;
-	long long int fib2 = 2;
-	long long int next;
+	long int fib1 = 1;
+	long int fib2 = 2;
+	long int next;
 	int count = 0;
 
-	printf("lld, %lld", fib1, fib2);
+	printf("ld, %ld", fib1, fib2);
 	count = 2;
 
 	while (count < n)
 	{
 		next = fib1 + fib2;
-		printf(", %lld", next);
+		printf(", %ld", next);
 
 		fib1 = fib2;
 		fib2 = next;
