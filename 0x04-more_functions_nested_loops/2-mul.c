@@ -7,7 +7,7 @@
  *
  * @b: integer two
  *
- * Return: 0 always
+ * Return: addition of the multiplicattion
  */
 int mul(int a, int b)
 {
