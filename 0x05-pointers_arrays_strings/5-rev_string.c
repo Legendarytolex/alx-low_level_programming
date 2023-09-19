@@ -26,10 +26,11 @@ void rev_string(char *s)
 	{
 		char temp = *s;
 
-		*start = *end;
+		*s = *end;
 		*end = temp;
 
 		s++;
 		end++;
 	}
+	return (0);
 }
