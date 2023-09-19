@@ -8,27 +8,13 @@
  */
 void puts_half(char *str)
 {
-	int length_of_the_string = 0;
-	char *temp = str;
-	int n = length_of_the_string / 2;
+	int i = 0;
 
-	while (*temp != '\0')
+	for (; i < n; i++)
 	{
-		length_of_the_string++;
-		temp++;
+		printf("%d", *(a + i));
+		if (i != (n - 1))
+			printf(", ");
 	}
-	if (length_of_the_string % 2 == 1)
-	{
-		n = (length_of_the_string - 1) / 2;
-	}
-
-	while (str[n] != '\0')
-	{
-		_putchar(str[n]);
-		n++;
-	}
-
-	_putchar('\n');
-
+	printf("\n");
 }
-

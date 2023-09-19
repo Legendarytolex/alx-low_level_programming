@@ -9,32 +9,29 @@
  */
 int _atoi(char *s)
 {
-	int result = 0;
-	int sign = 1;
-	int digit = 0;
-	int isDigitFound = 0;
+	unsigned int count = 0, size = 0, oi = 0, pn = 1, m = 1, i;
 
-	while (*s == ' ' || *s == '\t')
-		s++;
-	if (*s == '-')
+	while (*(s + count) != '\0')
 	{
-		sign = -1;
-		s++;
-	}
-	else if (*s == '+')
-		s++;
-	while (*s >= '0' && *s <= '9')
-	{
-		if (result > (2147483647 - digit) / 10)
+		if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
+			break;
+
+		if (*(s + count) == '-')
+			pn *= -1;
+
+		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
 		{
-			return ((sign == 1) ? 2147483647 : -2147483648);
+			if (size > 0)
+				m *= 10;
+			size++;
 		}
-		result = result * 10 + digit;
-		s++;
+		count++;
 	}
-	if (!isDigitFound)
+
+	for (i = count - size; i < count; i++)
 	{
-		return (0);
+		oi = oi + ((*(s + i) - 48) * m);
+		m /= 10;
 	}
-	return (result * sign);
+	return (oi * pn);
 }
