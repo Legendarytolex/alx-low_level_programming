@@ -5,9 +5,8 @@
  * @n: the integer
  * Return: void
  */
-void print_number(int n);
+void print_number(int n)
 {
-	int reverse = 0;
 	int num_digits = 0;
 	int temp;
 	int digit;
