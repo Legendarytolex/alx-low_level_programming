@@ -1,52 +1,36 @@
 #include "main.h"
-#include <stdbool.h>
-bool is_separator(char c)
-{
-	int i;
-	char separators[] = " \t\n,;.!?\"(){}";
-
-	for (i = 0; separators[i] != '\0'; i++)
-	{
-		if (c == separators[i])
-		{
-			return (true);
-		}
-	}
-	return (false);
-}
-
 /**
- * cap_string - a funfion that capitalizes all words of a string
- *
- * @str: the variable to be capitalized
- * Return: str
+ * cap_string - a function that capitalizes all words of a string
+ * @s: the variable to be capitalized
+ * Return: Returns a pointer to the value of str
  */
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	bool capitalize_next = true;
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (is_separator(str[i]))
+		if ((s[i - 1] == ' ' || s[i - 1] == '\n'
+		|| s[i - 1] == '\t' || s[i - 1] == ','
+		|| s[i - 1] == ';' || s[i - 1] == '!'
+		|| s[i - 1] == '?' || s[i - 1] == '"'
+		|| s[i - 1] == '(' || s[i - 1] == ')'
+		|| s[i - 1] == '{' || s[i - 1] == '}'
+		|| s[i - 1] == '.')
+		&& (s[i] >= 'a' && s[i] <= 'z'))
 		{
-			capitalize_next = true;
+			s[i] = s[i] - 32;
 		}
-		else if (capitalize_next)
+		else if ((s[0] >= 97 && s[0] <= 122))
 		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-			{
-				str[i] = str[i] - 'a' + 'A';
-			}
-			capitalize_next = false;
+			s[0] = s[0] - 32;
 		}
 		else
 		{
-			if (str[i] >= 'A' && str[i] <= 'Z')
-			{
-				str[i] = str[i] + 'a' - 'A';
-			}
+			s[i] = s[i];
 		}
+		i++;
 	}
-	return (str);
+	return (s);
 }
