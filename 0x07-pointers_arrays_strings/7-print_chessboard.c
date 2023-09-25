@@ -7,20 +7,18 @@
  */
 void print_chessboard(char (*a)[8])
 {
-	/*Declaring variables*/
-	int i, j;
+	int y, x;
 
-	i = 0;
-	while (i < 8) /*number repetitions*/
+	y = 0;
+	while (y < 8)
 	{
-		j = 0;
-		while (j < 8)
+		x = 0;
+		while (x < 8)
 		{
-			_putchar (a[i][j]);
-			j++;
+			_putchar(a[y][x]);
+			x++;
 		}
-		_putchar ('\n'); /*print new line*/
-		i++; /*add +1*/
+		_putchar('\n');
+		y++;
 	}
-
 }
