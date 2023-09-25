@@ -30,7 +30,6 @@ unsigned int _strspn(char *s, char *accept)
 
 			j++;    /*add j+1*/
 		}
-
 		if (s[i] != accept[j]) /*If aren't equals*/
 		{
 			break;
@@ -38,3 +37,4 @@ unsigned int _strspn(char *s, char *accept)
 		i++; /*add x+1*/
 	}
 	return (count);
+}
