@@ -9,21 +9,23 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	char not_found = 1;
-	char *a = accept;
+	int j;
 
-	while (*s != '\0')
+	while (*s != '\0') /*Declaring WHILE*/
 	{
-		while (*a != '\0')
+		j = 0;
+		while (accept[j] != '\0')  /*Evaluating *accept*/
 		{
-			if (*s == *a)
+			if (*s == accept[j])
 			{
 				return (s);
 			}
-			a++;
-		}
-		s++;
-	}
 
-	return (&not_found);
+			j++; /*add j+1*/
+		}
+
+		s++; /*add s+1*/
+	}
+	return (0);
+
 }
