@@ -4,7 +4,7 @@
  * _sqrt_helper - a helper function
  * @n: an integer
  * @i: another integer
- * return: the natural suare root
+ * Return: the natural suare root
  */
 int _sqrt_helper(int n, int i)
 {
@@ -26,5 +26,5 @@ int _sqrt_helper(int n, int i)
  */
 int _sqrt_recursion(int n)
 {
-	 return (_sqrt_helper(n, 1));
+	return (_sqrt_helper(n, 1));
 }
