@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _strdup -  a function that returns a pointer
@@ -12,22 +13,22 @@
  */
 char *_strdup(char *str)
 {
-	size_t i;
-	size_t length = 0;
-	char *dup_str = (char *)malloc(length + 1);
+	char *aaa;
+	int i, r = 0;
 
 	if (str == NULL)
 		return (NULL);
-	while (str[length] != '\0')
-		length++;
+	i = 0;
+	while (str[i] != '\0')
+		i++;
 
-	if (dup_str == NULL)
+	aaa = malloc(sizeof(char) * (i + 1));
+
+	if (aaa == NULL)
 		return (NULL);
 
-	for (i = 0; i < length; i++)
-	{
-		dup_str[i] = str[i];
-	}
-	dup_str[i] = '\0';
-	return (dup_str);
+	for (r = 0; str[r]; r++)
+		aaa[r] = str[r];
+
+	return (aaa);
 }
